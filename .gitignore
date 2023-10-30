@@ -167,3 +167,5 @@ order_email_notification_admin.html
 
 core/
 requirements.txt
+staticfiles
+templates
