@@ -5,7 +5,7 @@ from .views import SpecialOfferViewSet
 router = routers.DefaultRouter()
 
 #contact-us
-router.register(r'', SpecialOfferViewSet, basename="contact_us")
+router.register(r'', SpecialOfferViewSet, basename="special_offer")
 
 
 urlpatterns = router.urls
