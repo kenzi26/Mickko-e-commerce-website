@@ -1,6 +1,6 @@
 from rest_framework import routers
 from .views import ProductsViewSet, ProductCouponsViewSet, ProductCategoriesViewSet,FavouriteProductViewSet, \
-    ProductStatsViewSet, ComboProductViewSet, ProductSearchViewSet
+     ComboProductViewSet, ProductSearchViewSet
 from .tag.views import ProductTagsViewSet
     
 router = routers.DefaultRouter()
@@ -9,7 +9,7 @@ router.register(r'categories', ProductCategoriesViewSet, basename="products_cate
 
 #PRODUCTS ENDPOINTS
 router.register(r'coupons', ProductCouponsViewSet, basename="products_coupons")
-router.register(r'stats', ProductStatsViewSet, basename='product-stats')
+#router.register(r'stats', ProductStatsViewSet, basename='product-stats')
 router.register(r'tags', ProductTagsViewSet, basename='product-tags')
 router.register(r'combo', ComboProductViewSet, basename='product-combo')
 router.register(r'product/search/(?P<tag>[\w\s]+)', ProductSearchViewSet, basename="product-search-by-tags")
