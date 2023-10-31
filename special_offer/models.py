@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import User
+from user.models import User
 import decimal
 from product.models import Product
 
