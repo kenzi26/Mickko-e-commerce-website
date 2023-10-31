@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
-from accounts.models import User
+from user.models import User 
+from quotation_item.models import QuotationItem
 
   
 
@@ -18,7 +19,7 @@ class Quotation(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
-    quotation_items = models.ManyToManyField('QuotationItem', blank=True)
+    quotation_items = models.ManyToManyField(QuotationItem, blank=True)
     message = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=None)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
