@@ -3,12 +3,12 @@ from django.utils.text import slugify
 
 class ProductCategory(models.Model):
 
+    priority = models.IntegerField(default=0, help_text="Enter priority list order by lowest to highest. 0 is at the start of the list")
+    name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=100, null=False, blank=True)
     icon = models.ImageField(upload_to="product_categories", null=True, blank=True)
-    name = models.CharField(max_length=200)
     description = models.TextField(max_length=400, blank=True)
-    display_order = models.SmallIntegerField(null=False, blank=True, default=0)
-    parent_category = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
+    sub_category = models.ManyToManyField('self', blank=True)
     is_active = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=True)
     created_at = models.DateTimeField( null=False, blank=True, auto_now_add=True)
@@ -30,5 +30,17 @@ class ProductCategory(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ["display_order"]
         verbose_name_plural = 'Product Categories'
+
+
+app_label, *_ = __name__.partition('.')        
+class SubCategory(ProductCategory):
+    class Meta:
+        managed = False
+        auto_created = False
+        proxy=ProductCategory
+        db_table = "%s_%s" % (app_label, "ProductCategory")
+        verbose_name_plural = 'SubCategories'
+        
+    """SubCategory model consists of name and slug input fields"""
+    

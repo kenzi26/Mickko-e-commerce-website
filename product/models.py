@@ -1,7 +1,7 @@
 from django.db import models
 
 from .brand.models import ProductBrand
-from .category.models import ProductCategory 
+from .category.models import ProductCategory , SubCategory
 from .coupon.models import ProductCoupon
 from .tag.models import ProductTag
 from ckeditor.fields import RichTextField
