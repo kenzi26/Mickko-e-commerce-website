@@ -8,7 +8,7 @@ class Hero(SingletonModel):
     Header = models.TextField()
     text =  models.TextField() 
     image = models.ImageField(upload_to='hero_images/')
-#    phone_numbers = ArrayField(models.CharField(max_length=15), blank=True, null=True)
+    phone_numbers = models.CharField(max_length=15, blank=True, null=True)
 
 
     def __str__(self):
