@@ -4,10 +4,7 @@ from rest_framework import viewsets, generics, status, pagination
 from drf_yasg.utils import swagger_auto_schema
 from .controller import ContactUsController
 
-class CustomPagination(pagination.PageNumberPagination):
-    page_size = 200
-    page_size_query_param = 'page_size'
-    max_page_size = 200
+
     
 class ContactUsViewSet(viewsets.ViewSet):
     queryset = ContactUs.objects.filter(is_deleted=False)
