@@ -24,16 +24,11 @@ class ContactUsViewSet(viewsets.ViewSet):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    
     def list(self, request):
         queryset = self.queryset
-        paginator = CustomPagination()
-        page = paginator.paginate_queryset(queryset, request)
-        serializer = self.serializer_class(page, many=True)
-        return paginator.get_paginated_response(serializer.data)
-    # def list(self, request):
-    #     queryset = self.queryset
-    #     serializer = self.serializer_class(queryset, many=True)
-    #     return Response(serializer.data)
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
     
     def retrieve(self, request, pk=None):
         contact_us_instance = generics.get_object_or_404(self.queryset, pk=pk)
