@@ -72,7 +72,6 @@ class FavouriteProductViewSet(viewsets.ViewSet,
 
 class ComboProductViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     serializer_class = ProductSerializer
-#    pagination_class = CustomPageNumberPagination
 
     def get_queryset(self):
         queryset = Product.objects.filter(is_deleted=False, tags__name="combo")
