@@ -19,7 +19,6 @@ class OrderProductSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'featured_image',
-            'name'
         )
 
                
