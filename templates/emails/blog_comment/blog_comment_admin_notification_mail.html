@@ -1,0 +1,41 @@
+{% load i18n %}
+{% block subject %}
+{% blocktrans %}New Comment on Your Blog{% endblocktrans %}
+{% endblock subject %}
+{% block text_body %}
+Dear HR,
+
+A new comment has been posted on the  blog post titled "{{ blog_post }}" by 
+{{ author }}:
+{{ comment }}
+<br/>
+<br/>
+Best regards,
+Support
+{% endblock text_body %}
+
+{% block html_body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Comment Notification</title>
+</head>
+<body>
+    <p>Dear HR,</p>
+
+    <p>A new comment has been posted on the blog post titled "<strong>{{ blog_post }}</strong>" written by 
+        <strong>{{ author }}</strong> with the comment:</p>
+    
+    <div>
+        <strong>Comment:</strong><br/>
+        {{ comment | linebreaksbr }}
+    </div>
+    
+    <br/>
+    <br/>
+    <p>Best regards,</p>
+    <p>Support</p>
+</body>
+</html>
+{% endblock html_body %}
