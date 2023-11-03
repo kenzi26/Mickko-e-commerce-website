@@ -163,7 +163,3 @@ __pycache__!/env
 # Unused Templates
 order_email_notification_admin.html
 
-core/
-db.sqlite3
-templates
-staticfiles
