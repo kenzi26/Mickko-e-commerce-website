@@ -5,7 +5,7 @@ class Testimonial(models.Model):
     full_name= models.CharField(max_length=255)
     profile_picture= models.ImageField(upload_to='testimonial/')
     company= models.CharField(max_length=255, null=True, blank=True)
-    content= models.TextField()
+    content= models.CharField(max_length=500)
 
 
     class Meta:
