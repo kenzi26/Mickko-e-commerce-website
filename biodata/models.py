@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class BioData(SingletonModel):
     """ Hero model that enables the home page and it's content to be dynamic. It only takes one instance"""
-    emails = models.EmailField()
+    work_emails = models.EmailField()
     phone_numbers = (models.CharField(max_length=15))
     sales_email = models.EmailField()
     contact_us_email = models.EmailField()

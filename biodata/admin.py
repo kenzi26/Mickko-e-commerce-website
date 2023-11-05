@@ -5,7 +5,7 @@ from .models import BioData
 
 @admin.register(BioData)
 class BioDataFormAdmin(admin.ModelAdmin):
-    list_display = ('emails','phone_numbers', 'sales_email')
+    list_display = ('work_emails','phone_numbers', 'sales_email')
     def has_delete_permission(self, request, obj=None):
         return False
 
