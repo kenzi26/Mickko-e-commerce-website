@@ -4,7 +4,7 @@ from .views import SpecialOfferViewSet
     
 router = routers.DefaultRouter()
 
-#contact-us
+#special offer
 router.register(r'', SpecialOfferViewSet, basename="special_offer")
 
 
