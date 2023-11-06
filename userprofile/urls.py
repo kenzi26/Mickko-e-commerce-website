@@ -4,7 +4,7 @@ from .views import UserProfileViewSet
 
 router = routers.DefaultRouter()
 
-#Blog-comment Endpoint
+#userprofile Endpoint
 router.register(r'',UserProfileViewSet, basename="userprofile")
 
 
