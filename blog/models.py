@@ -8,7 +8,7 @@ class Blog(models.Model):
     title=  models.CharField(max_length=255)
     author= models.ForeignKey(User, on_delete=models.CASCADE)
     image= models.ImageField(upload_to='blog-image/', null=True, blank=True) 
-    content= RichTextField()
+    content=models.CharField(max_length=500)
     date_published= models.DateTimeField(auto_now_add=True, null=True, blank=True)
     is_deleted = models.BooleanField()
 
