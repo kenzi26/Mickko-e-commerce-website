@@ -9,7 +9,7 @@ class Hero(SingletonModel):
     text =  models.TextField() 
     image = models.ImageField(upload_to='hero_images/')
     phone_numbers = models.CharField(max_length=15, blank=True, null=True)
-    content= models.CharField(max_length=15, blank=True, null=True)
+    content= models.CharField(max_length=500, blank=True, null=True)
 
 
     def __str__(self):
