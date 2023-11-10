@@ -7,7 +7,7 @@ class Hero(SingletonModel):
 
     Header = models.TextField()
     text =  models.TextField() 
-    image = models.ImageField(upload_to='hero_images/', null=True, null=True)
+    image = models.ImageField(upload_to='hero_images/', null=True, blank=True)
     phone_numbers = models.CharField(max_length=15, blank=True, null=True)
     content= models.CharField(max_length=500, blank=True, null=True)
 
