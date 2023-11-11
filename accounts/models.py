@@ -28,7 +28,7 @@ class User(AbstractBaseUser, PermissionsMixin):    #full name instead of first-n
     username = models.CharField(max_length=50, unique=True)
     phone = models.CharField(max_length=50, unique=True, null=True, blank=True)
     first_name = models.CharField(max_length=100)
-    last_name= models.CharField(max_length=100)
+    last_name= models.CharField(max_length=99)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     role = models.CharField(max_length=50, choices= user_roles, default='user')
