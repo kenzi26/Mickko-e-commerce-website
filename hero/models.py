@@ -3,7 +3,7 @@ from solo.models import SingletonModel
 from django.contrib.postgres.fields import ArrayField
 
 class Hero(SingletonModel):
-    """ Hero model that enables the home page and it's content to be dynamic. It only takes one instance"""
+    """ Hero model that enables the home page and it's content to be dynamic. It takes one instance"""
 
     Header = models.TextField()
     text =  models.TextField() 
