@@ -26,7 +26,7 @@ class User(AbstractBaseUser, PermissionsMixin):    #full name instead of first-n
     user_roles= [('user', 'user'), ('admin', 'admin')]
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=50, unique=True)
-    phone = models.CharField(max_length=50, unique=True, null=True, blank=True)
+    phone = models.CharField(max_length=12, unique=True, null=True, blank=True)
     first_name = models.CharField(max_length=100)
     last_name= models.CharField(max_length=99)
     is_active = models.BooleanField(default=True)
