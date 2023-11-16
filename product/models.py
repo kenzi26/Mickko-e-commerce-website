@@ -11,7 +11,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, editable=False, blank=True)
     featured_image = models.ImageField(upload_to="product_categories", null=True, blank=True)
-    description = models.TextField(max_length=400, blank=True)
+    description = models.TextField(max_length=500, blank=True)
     details = models.TextField()
     price = models.DecimalField(max_digits=12, decimal_places=2)
     brand = models.ForeignKey('ProductBrand', on_delete=models.SET_NULL, null=True, blank=True)
