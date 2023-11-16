@@ -10,7 +10,7 @@ class SpecialOffer(models.Model):
     _new_price = models.DecimalField(db_column="new_price",max_digits=10, decimal_places=2, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,  blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to='special_offers/')
+    image = models.ImageField(upload_to='special_offers/', null=True, blank=True)
     description = models.TextField()
     is_active = models.BooleanField(default=True)
 
