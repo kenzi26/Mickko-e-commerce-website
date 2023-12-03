@@ -7,7 +7,7 @@ class ProductCoupon(models.Model):
        fixed = ('fixed', 'Fixed')
 
     id = models.PositiveIntegerField(primary_key=True)
-    code = models.CharField(max_length=200, unique=True)
+    code = models.CharField(max_length=150, unique=True)
     value = models.PositiveIntegerField( default=0)
     description = models.TextField(max_length=400, blank=True)
     type = models.CharField(max_length=100, choices=Type.choices, default=Type.fixed, null=False, blank=True)
