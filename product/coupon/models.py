@@ -16,5 +16,5 @@ class ProductCoupon(models.Model):
     updated_at = models.DateTimeField(null=False, blank=True, auto_now=True)
 
     class Meta:
-        verbose_name_plural = 'Product Coupons'
+        verbose_name_plural = 'Product Coupon'
 
