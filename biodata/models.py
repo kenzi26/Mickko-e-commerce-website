@@ -10,7 +10,7 @@ class BioData(SingletonModel):
     contact_us_email = models.EmailField()
     footer_text = models.TextField()
 
-    #when you change the DB, make emails and phone_numbers to be array
+    #when you change the DB, make emails and phone_numbers to be array (to accept multiple data )
     
     class Meta:
         verbose_name_plural = 'Bio Data'
