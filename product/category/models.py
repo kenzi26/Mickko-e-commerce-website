@@ -6,7 +6,7 @@ class ProductCategory(models.Model):
     priority = models.IntegerField(default=0, help_text="Enter priority list order by lowest to highest. 0 is at the start of the list")
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=100, null=False, blank=True)
-    icon = models.ImageField(upload_to="product_categories", null=True, blank=True)
+    icon = models.ImageField(upload_to="product_categories")
     description = models.TextField(max_length=400, blank=True)
     sub_category = models.ManyToManyField('self', blank=True)
     is_active = models.BooleanField(default=True)
