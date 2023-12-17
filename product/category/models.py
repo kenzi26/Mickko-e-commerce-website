@@ -13,7 +13,7 @@ class ProductCategory(models.Model):
     is_featured = models.BooleanField(default=True)
     created_at = models.DateTimeField( null=False, blank=True, auto_now_add=True)
     updated_at = models.DateTimeField(null=False, blank=True, auto_now=True)
-    is_deleted = models.BooleanField(default=False)
+    
 
     def __str__(self):
         return self.name
