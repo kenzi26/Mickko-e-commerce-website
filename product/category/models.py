@@ -7,7 +7,7 @@ class ProductCategory(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=100, null=False, blank=True)
     icon = models.ImageField(upload_to="product_categories")
-    description = models.TextField(max_length=500, blank=True)
+    description = models.TextField(max_length=400, blank=True)
     sub_category = models.ManyToManyField('self', blank=True)
     is_active = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=True)
