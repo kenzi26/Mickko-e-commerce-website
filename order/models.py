@@ -12,7 +12,7 @@ class Order(models.Model):
     special_offers = models.ForeignKey(SpecialOffer, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     date_ordered = models.DateField()
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=11, choices=STATUS_CHOICES)
 
     @property
     def product_name(self):
