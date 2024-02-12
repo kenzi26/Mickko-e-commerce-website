@@ -5,7 +5,7 @@ from rest_framework_simplejwt import views as simple_jwt_views
 from .views import UserViewSet, AdminUserView, MyTokenObtainPairView
 
 urlpatterns= [
-    # path("login/", simple_jwt_views.TokenObtainPairView.as_view(), name="login"),  
+  
     path("login/", MyTokenObtainPairView.as_view(), name="login"),  
     path("refresh/", simple_jwt_views.TokenRefreshView.as_view(), name="refresh-token"),
     path("verify/", simple_jwt_views.TokenVerifyView.as_view(), name="verify-token"),
